@@ -5,8 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Avro Learn</title>
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    .db-notice {
+      background-color: #fff3cd;
+      border: 1px solid #ffc107;
+      color: #856404;
+      padding: 10px 15px;
+      border-radius: 4px;
+      margin-bottom: 15px;
+      font-size: 12px;
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
+  <!-- Database Notice -->
+  <div class="db-notice">
+    ⚠️ Note: This site does not use a real database. Please save your account via local storage.
+  </div>
+
   <!-- LANDING PAGE -->
   <div id="landingPage">
     <div class="space-background">
@@ -838,9 +855,6 @@
       renderFlashcardDeck();
       updateDashboardStats();
     })();
-    (function(){
-      alert("this site does not use a real db so be sure your account is saved via local storage")
-    })()
   </script>
 </body>
 </html>
