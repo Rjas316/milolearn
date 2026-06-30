@@ -1,0 +1,174 @@
+/* ==========================================================================
+   1. VARIABLES & SYSTEM DEFAULTS (Consistent Theme)
+   ========================================================================== */
+:root {
+  /* Color Palette */
+  --primary-color: #4f46e5;       /* Modern Indigo */
+  --primary-hover: #4338ca;
+  --bg-app: #f8fafc;              /* Soft off-white */
+  --bg-card: #ffffff;
+  --text-main: #0f172a;           /* Deep slate (never pure black) */
+  --text-muted: #64748b;
+  --border-color: #e2e8f0;
+  
+  /* Status Colors */
+  --success: #10b981;
+  --danger: #ef4444;
+
+  /* Typography & Shapes */
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+  --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.03);
+  --shadow-lg: 0 10px 15px -3px rgba(47, 46, 65, 0.1);
+  
+  /* Animations */
+  --transition-fast: 0.2s ease;
+}
+
+/* ==========================================================================
+   2. GLOBAL RESET & APP WRAPPER
+   ========================================================================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-app);
+  color: var(--text-main);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  overscroll-behavior: none; /* Prevents awkward mobile rubber-banding */
+}
+
+/* Base App Layout (Header + Scrollable Content + Sticky Footer) */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  max-width: 480px; /* Perfect for mobile apps. Remove/increase for dashboard web apps */
+  margin: 0 auto;
+  background-color: var(--bg-card);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ==========================================================================
+   3. APP COMPONENTS (Header, Cards, Elements)
+   ========================================================================== */
+
+/* Navigation Header */
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  background-color: var(--bg-card);
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.app-header h1 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* Main Content Wrapper */
+.app-main {
+  flex: 1;
+  padding: 20px;
+}
+
+/* Cards (The structural backbone of modern app design) */
+.app-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  margin-bottom: 16px;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.app-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* ==========================================================================
+   4. UI INTERACTIONS (Buttons, Forms, Inputs)
+   ========================================================================== */
+
+/* Modern Inputs */
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.app-input {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 1rem;
+  font-family: inherit;
+  color: var(--text-main);
+  background-color: var(--bg-app);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  outline: none;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.app-input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+  background-color: var(--bg-card);
+}
+
+/* Sleek Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color var(--transition-fast), transform 0.1s ease;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+}
+
+.btn:active {
+  transform: scale(0.98); /* Satisfying physical press effect */
+}
+
+/* Utilities */
+.text-muted { color: var(--text-muted); font-size: 0.875rem; }
+.text-danger { color: var(--danger); }
+.text-success { color: var(--success); }
