@@ -123,7 +123,7 @@
       </div>
 
       <div class="hero-section">
-        <h1 class="hero-title">Welcome to <span class="highlight">Milo</span></h1>
+        <h1 class="hero-title">Welcome to <span class="highlight">Avro</span></h1>
         <p class="hero-subtitle">Your magical journey to knowledge begins here! ✨</p>
         
         <div class="blobs-container">
@@ -844,7 +844,7 @@
         document.querySelector(".now-playing").textContent = isPlaying ? "Now Playing: " + currentTrack : "Paused";
       };
       window.stopMusic = function () { isPlaying = false; document.getElementById("playBtn").textContent = "Play"; };
-      window.selectTrack = function (track) { currentTrack = track; isPlaying = true; document.getElementById("playBtn").textContent = "Pause"; document.querySelector(".now-playing").textContent = "Now Playing: " + currentTrack; };
+      window.selectTrack = function (track) { currentTrack = track; isPlaying = true; document.getElementById("playBtn").textContent = "Pause"; document.querySelector(".now-playing").textContent = "Now Playing: " + track; };
 
       window.askQuestion = function () {
         const q = document.getElementById("questionInput").value.trim();
